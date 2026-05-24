@@ -1,44 +1,44 @@
 body {
-    background-image: linear-gradient(to right,darkred, black);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+    color: rgb(255, 123, 0);
+    font-family: monospace;
 }
 
 h1 {
-    font-size: 80px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    text-shadow: 3px 3px darkred;
+    font-size: 70px;
 }
 
 input {
-    font-size: 25px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-self: center;
+    font-size: 20px;
 }
 
 button {
-    font-size: 25px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-self: center;
+    font-size: 20px;
 }
 
 li {
-    font-size: 25px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 1px 1px darkred;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
+    font-size: 20px;
+    font-size: 30px;
 }
 
 ul {
-    font-size: 25px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    justify-items: center;
-    text-shadow: 1px 1px darkred;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-self: center;
+    font-size: 20px;
 }
 
 section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: fit-content;
-    justify-self: center;
-    gap: 10px;
+    gap: 20px;
 }
