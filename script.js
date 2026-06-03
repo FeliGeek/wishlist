@@ -1,31 +1,44 @@
-console.log("Array");
-
 const input = document.getElementById("input");
 const button = document.getElementById("button");
-const ul = document.getElementById("ul");
+const article = document.getElementById("article");
 
 let array = [];
 
-button.addEventListener("click", function(){
+button.addEventListener("click",function(){
     let text = input.value;
     array.push(text);
+    saveText();
     showText();
 });
 
 function showText(){
-    ul.innerHTML = "";
-    array.forEach(function(element, indice){
-        let li = document.createElement("li");
-        li.textContent = element;
-
-        let boton = document.createElement("button");
-        boton.textContent = "❌";
-        boton.addEventListener("click",function(){
-            array.splice(indice, 1);
+    article.innerHTML = "";
+    array.forEach(function(item,index){
+        let div = document.createElement("div");
+        div.textContent = "- " + item + " ";
+        let eliminate = document.createElement("button");
+        eliminate.textContent = "❌";
+        eliminate.addEventListener("click",function(){
+            array.splice(index,1);
+            saveText();
             showText();
         });
-
-        li.appendChild(boton);
-        ul.appendChild(li);
+        div.appendChild(eliminate);
+        article.appendChild(div);
     });
 };
+
+function saveText(){
+    localStorage.setItem("array",JSON.stringify(array));
+};
+
+function loadText(){
+    let savedText = localStorage.getItem("array");
+    if(savedText){
+        array = JSON.parse(savedText);
+    };
+    showText();
+};
+
+loadText();
+
